@@ -1,51 +1,107 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import ColorPicker from "./ColorPicker";
 import SearchBar from "./SearchBar";
 import youtube from "../apis/youtube";
 import VideoList from "./VideoList";
 import VideoDetail from "./VideoDetail";
+import "./App.scss";
 
-class App extends React.Component {
-  state = { videos: [], selectedVideo: null };
+const App = () => {
+  const [RgbaColor, setRgbaColor] = useState("#1d3557"); // default Background Color
+  const [videos, setVideos] = useState([]);
+  const [selectedVideo, setSelectedVideo] = useState(null);
 
-  componentDidMount() {
-    this.onSearchInput(""); // default search
-  }
+  useEffect(() => {
+    onSearchInput(""); // default search
+  }, []);
 
-  onSearchInput = async (searchInput) => {
+  const onSearchInput = async (searchInput) => {
     const res = await youtube.get("/search", {
       params: {
         q: searchInput,
       },
     });
-    this.setState({ videos: res.data.items, selectedVideo: res.data.items[0] });
+    setVideos(res.data.items);
+    setSelectedVideo(res.data.items[0]);
   };
 
-  onVideoSelect = (video) => {
-    this.setState({ selectedVideo: video });
+  const onVideoSelect = (video) => {
+    setSelectedVideo(video);
   };
 
-  render() {
-    return (
+  return (
+    <div
+      className="whole-container"
+      style={{ backgroundColor: `${RgbaColor}`, zIndex: 4, height: "100vh" }}
+    >
       <div className="ui container">
-        <SearchBar onSearchSubmit={this.onSearchInput} />I have{" "}
-        {this.state.videos.length} videos.
+        <div className="search-container">
+          <SearchBar onSearchSubmit={onSearchInput} />
+          <div className="color-pic">
+            <ColorPicker RgbaColor={RgbaColor} setRgbaColor={setRgbaColor} />
+            <p>Background Color Changer</p>
+          </div>
+        </div>
+        <div className="search-lable">I have {videos.length} videos.</div>
         <div className="ui grid">
           <div className="ui row">
             <div className="eleven wide column">
-              <VideoDetail video={this.state.selectedVideo} />
+              <VideoDetail video={selectedVideo} />
             </div>
             <div className="five wide column">
               <VideoList
                 // key={video.id.videoId}
-                onVideoSelect={this.onVideoSelect}
-                videos={this.state.videos}
+                onVideoSelect={onVideoSelect}
+                videos={videos}
               />
             </div>
           </div>
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default App;
+
+////////////////////////////////////////////////
+
+// import React, { useState, useEffect } from "react";
+// import ColorPicker from "./ColorPicker";
+// import SearchBar from "./SearchBar";
+// import youtube from "../apis/youtube";
+// import VideoList from "./VideoList";
+// import VideoDetail from "./VideoDetail";
+// import "./random.css";
+
+// const App = () => {
+//   const [RgbaColor, setRgbaColor] = useState("#fff");
+//   const [videos, setVideos] = useState([]);
+//   const [selectedVideo, setSelectedVideo] = useState(null);
+
+//   useEffect(() => {
+//     onSearchInput(""); // default search
+//   }, []);
+
+//   const onSearchInput = async (searchInput) => {
+//     const res = await youtube.get("/search", {
+//       params: {
+//         q: searchInput,
+//       },
+//     });
+//     setVideos(res.data.items);
+//     setSelectedVideo(res.data.items[0]);
+//   };
+
+//   const onVideoSelect = (video) => {
+//     setSelectedVideo(video);
+//   };
+
+//   return (
+//     <div className="thum-card">
+//       <img src="https://picsum.photos/seed/picsum/200/300" alt="random Image" />
+//     </div>
+//   );
+// };
+
+// export default App;

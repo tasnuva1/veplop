@@ -1,4 +1,5 @@
 import React from "react";
+import "./SearchBarStyle.css";
 
 class SearchBar extends React.Component {
   state = { searchInput: "" };
@@ -17,21 +18,43 @@ class SearchBar extends React.Component {
 
   render() {
     return (
-      <div className="search-bar ui segment">
-        <form action="" onSubmit={this.onFormSubmit} className="ui form">
-          <div className="field">
-            <label>Video Search</label>
-            <input
-              placeholder="Search"
-              type="text"
-              value={this.state.searchInput}
-              onChange={this.onInputChange}
-            />
-          </div>
+      <div className="box">
+        <h2>Search</h2>
+        <form action="" onSubmit={this.onFormSubmit}>
+          <input
+            type="text"
+            value={this.state.searchInput}
+            onChange={this.onInputChange}
+            name=""
+            placeholder="Type..."
+          />
+          <input
+            type="submit"
+            // value={this.state.searchInput}
+            onChange={this.onInputChange}
+            value="Search"
+          />
         </form>
       </div>
     );
   }
+  // render() {
+  //   return (
+  //     <div className="search-bar ui segment">
+  //       <form action="" onSubmit={this.onFormSubmit} className="ui form">
+  //         <div className="field">
+  //           <label>Video Search</label>
+  //           <input
+  //             placeholder="Search"
+  //             type="text"
+  //             value={this.state.searchInput}
+  //             onChange={this.onInputChange}
+  //           />
+  //         </div>
+  //       </form>
+  //     </div>
+  //   );
+  // }
 }
 
 export default SearchBar;
