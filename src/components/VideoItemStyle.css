@@ -5,5 +5,9 @@
 }
 
 .video-item.item img {
-  max-width: 480px;
+  max-width: 48.6rem;
+}
+
+.fa-comment-o {
+  font-size: 1.1rem;
 }

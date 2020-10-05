@@ -1,6 +1,44 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
 $open-sans: "Open Sans", sans-serif;
 
+.app-container {
+  width: 80%;
+  margin: auto;
+}
+
+.pickr {
+  border: 4px solid #a8dadc !important;
+  // padding: 0;
+  // margin: 0;
+  width: 2.7em;
+  height: 2.7em;
+}
+
+.html5-video-player:not(.ytp-touch-mode) ::-webkit-scrollbar-thumb {
+  border: 0px solid #424242 !important;
+}
+
+.ui.segment {
+  background: #a8dadc;
+}
+
+.ui.header {
+  // color: rgb(41, 39, 39);
+  color: #231f25;
+}
+
+.ui.header span {
+  display: block;
+  margin-top: 1rem;
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+  color: #3f3b41;
+}
+
+.timeModeDetails {
+  margin-top: 0rem;
+}
+////////////////////
 .search-container {
   display: flex;
   justify-content: space-between;
@@ -12,14 +50,18 @@ $open-sans: "Open Sans", sans-serif;
 
     p {
       padding-top: 0.7rem;
+      font-size: 1.6rem;
     }
   }
 }
 
 .search-lable {
-  margin-top: 3rem;
-  margin-left: 15%;
+  margin-top: 3.6rem;
+  margin-left: 18%;
+  font-size: 1.4rem;
 }
+
+/////////////////////////////////////////////@at-root\
 
 html,
 body {
@@ -28,4 +70,41 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: $open-sans;
+
+  font-size: 10px;
+}
+
+///////////////////////////// Big Screen
+
+@media screen and (min-width: 1466px) {
+  html,
+  body {
+    font-size: 11px;
+  }
+}
+@media screen and (min-width: 1766px) {
+  html,
+  body {
+    font-size: 12px;
+  }
+}
+
+@media screen and (min-width: 1866px) {
+  html,
+  body {
+    font-size: 15px;
+  }
+}
+@media screen and (min-width: 2070px) {
+  html,
+  body {
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 3140px) {
+  html,
+  body {
+    font-size: 28px;
+  }
 }

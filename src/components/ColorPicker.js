@@ -8,10 +8,10 @@ const ColorPicker = ({ RgbaColor, setRgbaColor }) => {
     const pickr = Pickr.create({
       el: ".color-picker",
       theme: "classic", // or 'monolith', or 'nano'
-      default: "#E69389",
-
+      default: "#1d3557",
       swatches: [
         "rgba(29, 53, 87, 1)",
+        "rgba(230,147,137,1)",
         "rgba(244, 67, 54, 1)",
         "rgba(233, 30, 99, 0.95)",
         "rgba(103, 58, 183, 0.85)",
@@ -57,7 +57,9 @@ const ColorPicker = ({ RgbaColor, setRgbaColor }) => {
   return (
     <div className="" style={{ padding: 0, backgroundColor: `${RgbaColor}` }}>
       {/* {rgbaColor} */}
-      <div className="color-picker"></div>
+      <div className="color-picker-container" style={{ padding: 0 }}>
+        <div className="color-picker"></div>
+      </div>
     </div>
   );
 };

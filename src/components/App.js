@@ -29,12 +29,15 @@ const App = () => {
     setSelectedVideo(video);
   };
 
+  const loadis = videos.map((video) => {
+    return !video;
+  });
+  const { video } = videos;
+  console.log(!video);
+
   return (
-    <div
-      className="whole-container"
-      style={{ backgroundColor: `${RgbaColor}`, zIndex: 4, height: "100vh" }}
-    >
-      <div className="ui container">
+    <div style={{ backgroundColor: `${RgbaColor}`, zIndex: 4 }}>
+      <div className="app-container">
         <div className="search-container">
           <SearchBar onSearchSubmit={onSearchInput} />
           <div className="color-pic">
@@ -42,7 +45,7 @@ const App = () => {
             <p>Background Color Changer</p>
           </div>
         </div>
-        <div className="search-lable">I have {videos.length} videos.</div>
+        <div className="search-lable">We have {videos.length} videos.</div>
         <div className="ui grid">
           <div className="ui row">
             <div className="eleven wide column">

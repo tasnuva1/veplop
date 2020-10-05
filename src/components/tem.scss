@@ -28,7 +28,7 @@ a {
 h1 {
   font-family: $open-sans;
   font-weight: 700;
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   //   color: rgba(0, 0, 0, 0.904);
   color: #231f25;
   //   color: white;
@@ -38,15 +38,16 @@ h1 {
 }
 
 .row {
-  max-width: 900px;
-  margin: 50px auto 0;
+  max-width: 90.6rem;
+  margin: 5.6rem auto 0;
 }
 
 // Base styles
 .card {
+  cursor: pointer;
   float: left;
-  padding: 0 1.7rem;
-  margin-bottom: 3rem;
+  padding: 0 2.3rem;
+  margin-bottom: 3.6rem;
   //   width: 50%;
   .menu-content {
     @include cf;
@@ -63,7 +64,7 @@ h1 {
       position: absolute;
       left: 50%;
       top: 0;
-      font-size: 10px;
+      // font-size: 1.9rem;
       font-weight: 700;
       font-family: "Open Sans";
       transform: translate(-50%, 0);
@@ -72,11 +73,12 @@ h1 {
   .wrapper {
     filter: brightness(90%);
     background-color: $white;
-    min-height: 480px;
-    width: 360px;
+    min-height: 48.6rem;
+    width: 36.6rem;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 19px 38px rgba($black, 0.3), 0 15px 12px rgba($black, 0.2);
+    box-shadow: 0 1.9rem 3.8rem rgba($black, 0.3),
+      0 1.5rem 1.2rem rgba($black, 0.2);
     &:hover {
       .data {
         transform: translateY(0);
@@ -87,7 +89,7 @@ h1 {
     position: absolute;
     bottom: 0;
     width: 100%;
-    transform: translateY(calc(70px + 1em));
+    transform: translateY(calc(7.6rem + 1.6em));
     transition: transform 0.3s;
     .content {
       padding: 1em;
@@ -96,13 +98,13 @@ h1 {
     }
   }
   .author {
-    font-size: 12px;
+    font-size: 1.6rem;
   }
   .title {
-    margin-top: 10px;
+    margin-top: 2rem;
   }
   .text {
-    height: 70px;
+    height: 7.6rem;
     margin: 0;
     // color: #000;
   }
@@ -139,8 +141,8 @@ h1 {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    min-height: 270px;
-    min-width: 480px;
+    min-height: 27.6rem;
+    min-width: 48.6rem;
 
     &:hover {
       .menu-content {
@@ -157,13 +159,15 @@ h1 {
     padding: 1em;
     .date {
       float: left;
-      font-size: 12px;
+      font-size: 1.4rem;
+      // color: #231f25;
+      // color: #f1faee;
     }
   }
   .menu-content {
     float: right;
     li {
-      margin: 0 5px;
+      margin: 0 1rem;
       position: relative;
     }
     span {
@@ -173,7 +177,7 @@ h1 {
   }
   .data {
     color: $white;
-    transform: translateY(calc(70px + 4em));
+    transform: translateY(calc(7.6rem + 4em));
   }
   .title {
     a {
@@ -182,10 +186,10 @@ h1 {
   }
   .button {
     display: block;
-    width: 100px;
+    width: 10rem;
     margin: 2em auto 1em;
     text-align: center;
-    font-size: 12px;
+    font-size: 1.7rem;
     color: $white;
     line-height: 1;
     position: relative;

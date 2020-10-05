@@ -1,12 +1,26 @@
 import "./VideoItemStyle.css";
 import "./tem.scss";
-import React from "react";
+import React, { useEffect } from "react";
 
 import blur from "../Images/white-blur.png";
 
-const VideoItem = ({ video, onVideoSelect }) => {
-  console.log(video);
-  let counts = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const VideoItem = ({ video, onVideoSelect, time, counter }) => {
+  // console.log(video);
+  // let counts = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+  // var arr = [1, 2, 3];
+  // for (var i = 0; i <= arr.length; i++) {
+  //   console.log(arr[i]);
+  // }
+
+  // for (var i = 0; i < 9; i++) {
+  //   i
+  //  }
+  // console.log(num2);
+
+  // useEffect(() => {
+  //   counterContainer();
+  // }, []);
 
   // Destructuring
   return (
@@ -35,12 +49,13 @@ const VideoItem = ({ video, onVideoSelect }) => {
       <div
         class="wrapper"
         style={{ backgroundImage: `url(${video.snippet.thumbnails.high.url})` }}
+        onClick={() => {
+          onVideoSelect(video);
+        }}
       >
         <div class="header">
           <div class="date">
-            <span class="day">12</span>
-            <span class="month">Aug</span>
-            <span class="year">2016</span>
+            <span class="day">{time}</span>
           </div>
           <ul class="menu-content">
             <li>
@@ -48,14 +63,12 @@ const VideoItem = ({ video, onVideoSelect }) => {
             </li>
             <li>
               <a href="#" class="fa fa-heart-o">
-                <span>
-                  <span>{counts.map((el, index) => el[index])}</span>{" "}
-                </span>
+                <span>{/* <span>{counter}</span>{" "} */}</span>
               </a>
             </li>
             <li>
               <a href="#" class="fa fa-comment-o">
-                <span>3</span>
+                <span>{counter}</span>
               </a>
             </li>
           </ul>

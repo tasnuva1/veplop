@@ -19,7 +19,7 @@ class SearchBar extends React.Component {
   render() {
     return (
       <div className="box">
-        <h2>Search</h2>
+        <h2>YouTube Search</h2>
         <form action="" onSubmit={this.onFormSubmit}>
           <input
             type="text"
