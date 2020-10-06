@@ -1,13 +1,12 @@
 import React, { useEffect } from "react";
-import "@simonwep/pickr/dist/themes/classic.min.css"; // 'classic' theme
+import "@simonwep/pickr/dist/themes/classic.min.css";
 import Pickr from "@simonwep/pickr";
 
 const ColorPicker = ({ RgbaColor, setRgbaColor }) => {
   useEffect(() => {
-    // Simple example, see optional options for more configuration.
     const pickr = Pickr.create({
       el: ".color-picker",
-      theme: "classic", // or 'monolith', or 'nano'
+      theme: "classic",
       default: "#1d3557",
       swatches: [
         "rgba(29, 53, 87, 1)",
@@ -28,12 +27,10 @@ const ColorPicker = ({ RgbaColor, setRgbaColor }) => {
       ],
 
       components: {
-        // Main components
         preview: true,
         opacity: true,
         hue: true,
 
-        // Input / output Options
         interaction: {
           hex: true,
           rgba: true,
@@ -50,13 +47,10 @@ const ColorPicker = ({ RgbaColor, setRgbaColor }) => {
     let clearColor = "#1d3557";
 
     pickr.on("change", (color) => setRgbaColor(color.toRGBA().toString()));
-    // pickr.on("clear", (instance) => setRgbaColor(clearColor.toRGBA(.toString()));
-    // this.setState({ rgbaColor: rgbaColors });
   }, []);
 
   return (
     <div className="" style={{ padding: 0, backgroundColor: `${RgbaColor}` }}>
-      {/* {rgbaColor} */}
       <div className="color-picker-container" style={{ padding: 0 }}>
         <div className="color-picker"></div>
       </div>

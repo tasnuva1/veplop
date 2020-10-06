@@ -5,12 +5,7 @@ const VideoList = ({ videos, onVideoSelect }) => {
   // Destructuring
   const array1 = [0]; // 1
 
-  // for (var i = 0; i < 9; i++) {
-  //   i
-  //  }
-
   const numMap = array1.map((x) => x[0]);
-  // console.log(numMap.push(1));
   const renderedList = videos.map((video) => {
     const timeMode = video.snippet.publishedAt;
     const timeMode2 = timeMode.slice(0, 10);

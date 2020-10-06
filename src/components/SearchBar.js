@@ -12,8 +12,7 @@ class SearchBar extends React.Component {
     event.preventDefault();
 
     // Make sure we call
-    this.props.onSearchSubmit(this.state.searchInput); // this.onSearchInput(this.state.searchInput);
-    // Callback from parent component
+    this.props.onSearchSubmit(this.state.searchInput);
   };
 
   render() {
@@ -28,33 +27,11 @@ class SearchBar extends React.Component {
             name=""
             placeholder="Type..."
           />
-          <input
-            type="submit"
-            // value={this.state.searchInput}
-            onChange={this.onInputChange}
-            value="Search"
-          />
+          <input type="submit" onChange={this.onInputChange} value="Search" />
         </form>
       </div>
     );
   }
-  // render() {
-  //   return (
-  //     <div className="search-bar ui segment">
-  //       <form action="" onSubmit={this.onFormSubmit} className="ui form">
-  //         <div className="field">
-  //           <label>Video Search</label>
-  //           <input
-  //             placeholder="Search"
-  //             type="text"
-  //             value={this.state.searchInput}
-  //             onChange={this.onInputChange}
-  //           />
-  //         </div>
-  //       </form>
-  //     </div>
-  //   );
-  // }
 }
 
 export default SearchBar;

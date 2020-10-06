@@ -29,12 +29,7 @@ h1 {
   font-family: $open-sans;
   font-weight: 700;
   font-size: 1.8rem;
-  //   color: rgba(0, 0, 0, 0.904);
   color: #231f25;
-  //   color: white;
-  //   -webkit-text-fill-color: black; /* Will override color (regardless of order) */
-  //   -webkit-text-stroke-width: 0.8px;
-  //   -webkit-text-stroke-color: white;
 }
 
 .row {
@@ -48,7 +43,6 @@ h1 {
   float: left;
   padding: 0 2.3rem;
   margin-bottom: 3.6rem;
-  //   width: 50%;
   .menu-content {
     @include cf;
     margin: 0;
@@ -64,7 +58,6 @@ h1 {
       position: absolute;
       left: 50%;
       top: 0;
-      // font-size: 1.9rem;
       font-weight: 700;
       font-family: "Open Sans";
       transform: translate(-50%, 0);
@@ -106,14 +99,8 @@ h1 {
   .text {
     height: 7.6rem;
     margin: 0;
-    // color: #000;
   }
   .bg-text {
-    // filter: blur(8px);
-    // -webkit-filter: blur(8px);
-
-    /* Full height */
-    // height: 80px;
     height: 100%;
     width: 100%;
 
@@ -129,13 +116,9 @@ h1 {
   }
 }
 
-// Second example styles
 .example-2 {
   .wrapper {
-    // background: url(https://tvseriescritic.files.wordpress.com/2016/10/stranger-things-bicycle-lights-children.jpg)
-    //   center / cover no-repeat;
     background-repeat: no-repeat;
-    // background-attachment: fixed;
     background-position: center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -160,8 +143,6 @@ h1 {
     .date {
       float: left;
       font-size: 1.4rem;
-      // color: #231f25;
-      // color: #f1faee;
     }
   }
   .menu-content {

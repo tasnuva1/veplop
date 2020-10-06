@@ -39,7 +39,6 @@ const VideoDetail = ({ video }) => {
           </span>
         </h4>
         <p>{video.snippet.description}</p>
-        {/* <p>{video.snippet.localized.description}</p> */}
       </div>
     </div>
   );
